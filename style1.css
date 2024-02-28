@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+*{
+    * establece el margen alrededor del elemento en cero*/
+    margin: 0;
+    /*establece el relleno dentro del elemento en cero*/
+    padding: 0;
+    /*asegura que el ancho y alto total del elemento incluyan tanto el contenido como el relleno, pero no el margen*/
+    box-sizing: border-box;
+    /*Elimina cualquier subrayado de los enlaces de texto*/
+    text-decoration: none;
+    /* Quitando las viñetas de las listas*/
+    list-style: none;
+
+}
+
+.header{
+    font-family: "Playfair Display", serif;
+    /*Altura Maxima*/
+    min-height: 70vh;
+    /*Para Alinear el Contenido en el Centro*/
+    display: flex;
+    align-items: center;
+   
+}
+
+body{
+    margin 0;
+    padding: 0;
+    font-family:"Playfair Display", serif;
+    background: linear-gradient(
+        150deg,
+        rgb(212, 118, 11)51%,
+        rgb(189, 100, 5)100%
+    );
+    height: 100vh;
+    
+}
+
+.container{
+    /*  establece el ancho máximo de este contenedor en 1200 píxeles*/
+    max-width: 1100px;
+    /*centra el contenedor horizontalmente al establecer los márgenes izquierdo y derecho en “auto” */
+    margin:0 auto;
+}
+
+
+
+.menu{
+    /*Posiciona el menu el la parte de Arriba y lo extiende horizontamente*/
+    position: absolute;
+    top:0;
+    left: 0;
+    right:0;
+    /*alinea verticalmente los elementos del menú en el centro utilizando flexbox*/
+    display:flex;
+    align-items: center;
+    /*distribuye uniformemente los elementos del menú horizontalmente*/
+    justify-content: space-between;
+}
+
+.imagen-logo img{
+    /* ancho de la imagen*/
+    width:  80px;
+}
+
+.menu .navegacion ul li{
+    position: relative;
+    float:left;
+}
+
+
+.menu .navegacion ul li a{
+    /*Tamaño de la letra*/
+    font-size: 18px;
+    /* agrega un relleno de 40 píxeles alrededor del enlace*/
+    padding: 40px;
+    /* establece el color del texto en negro*/
+    color: black;
+    /*hace que el enlace sea un elemento de bloque (ocupando todo el ancho disponible)*/
+    display: block;
+    /* establece el peso de la fuente en negrita*/
+    font-weight: bold;
+
+}
+
+
+.menu .navegacion ul a:hover{
+    /*Cambia el color del texto a gris cuando el usuario pasa el cursor sobre los enlaces*/
+    color:grey;
+}
+
+.menu .navegacion a::after{
+    /*Cambia el color del texto a gris cuando el usuario pasa el cursor sobre los enlaces*/
+    content:"";
+    /*Posiciona el pseudo-elemento de manera absoluta con respecto al enlace*/
+	position: absolute;
+    /* establece el ancho del pseudo-elemento al 100% del ancho del enlace*/
+	width: 100%;
+    /*coloca el pseudo-elemento 5 píxeles por debajo del enlace*/
+	bottom: -5px;
+    /*alinea el pseudo-elemento a la izquierda del enlace*/
+	left: 0;
+    /*establece la altura del pseudo-elemento en 1 píxel (creando una línea horizontal)*/
+	height: 1px;
+	background: rgb(0, 0, 0);	
+    /*inicialmente, el pseudo-elemento está completamente escalado en el eje X (invisible)*/   
+    transform: scaleX(0);
+    /*establece el punto de origen de la transformación en el lado derecho.*/
+	transform-origin: right;
+    /*agrega una transición suave para la transformación*/
+    transition: transform .4s;
+}
+
+.menu .navegacion a:hover::after{
+    /*Cuando el cursor está sobre los enlaces, cambia la escala del pseudo-elemento en el eje X a 1 (haciéndolo visible).*/
+	transform: scaleX(1);
+    /*El punto de origen de la transformación se cambia al lado izquierdo*/
+    transform-origin: left;	
+}
+    
+.menu-icono{
+    /*Establece el ancho de estos elementos en 30 píxeles*/
+    width: 30px;
+
+}
+
+.menu label{
+    /*Cambia el cursor a una mano (indicando que es interactivo)*/
+    cursor:pointer;
+    /*Oculta las etiquetas */
+    display:none;
+}
+
+.formulario{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    background: white;
+    border-radius: 10px;
+
+}
+
+.formulario h1{
+    text-align: center;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid rgb(212, 118, 11) ;
+}
+
+.formulario form{
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+form .username{
+    position: relative;
+    border-bottom: 2px solid rgb(212, 118, 11);
+    margin: 30px 0;
+}
+
+
+
+.username input{
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+
+.username label{
+    position: absolute;
+    top:50%;
+    left: 5px;
+    color:rgb(212, 118, 11);
+    transform:translateY(-50%);
+    font-size: 16px;
+    pointer-events:none;
+    transition: .5s;
+}
+
+
+.username span::before{
+    content: "";
+    position: absolute;
+    top: 40px;
+    left:0;
+    width: 100%;
+    height: 2px;
+    background: #fafafa;
+   transition: .5s;
+}
+
+.username input:focus~label,
+.username input:focus~label{
+    top: -5px;
+    color:#ff714e;
+}
+
+.username input:focus~span::before,
+.username input:focus~span::before{
+    width: 100%;
+} 
+
+.recordar{
+    margin: -5px 0 20px 5px;
+    color: blue;
+    cursor:pointer;
+}
+
+.recordar:hover{
+    text-decoration:underline;
+}
+
+input[type="submit"]{
+    width: 100%;
+    height: 50px;
+    border: 1px solid;
+    background-color: rgb(212, 118, 11);
+    border-radius: 25px;
+    font-size: 18px;
+    color: white;
+    cursor:pointer;
+    outline: none;
+}
+
+input[type="submit"]:hover{
+    border-color:darkorange;
+    transition: .5s;
+}
+
+.registrarse{
+    margin: 30px 0;
+    text-align: center;
+    font-size: 16px;
+    color:black
+}
+
+.registrarse a{
+    color:blue;
+    text-decoration: none;
+}
+
+.registrarse a:hover{
+    text-decoration:underline;
+}

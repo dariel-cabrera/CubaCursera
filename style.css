@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+ 
+*{
+    /* establece el margen alrededor del elemento en cero*/
+    margin: 0;
+    /*establece el relleno dentro del elemento en cero*/
+    padding: 0;
+    /*asegura que el ancho y alto total del elemento incluyan tanto el contenido como el relleno, pero no el margen*/
+    box-sizing: border-box;
+    /*Elimina cualquier subrayado de los enlaces de texto*/
+    text-decoration: none;
+    /* Quitando las viñetas de las listas*/
+    list-style: none;
+}
+body{
+    /*Familia de Fuentes */
+    font-family: "Playfair Display", serif;
+
+}
+
+p{
+    /*Familia de Fuentes para los parrafos */
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container{
+    /*  establece el ancho máximo de este contenedor en 1200 píxeles*/
+    max-width: 1100px;
+    /*centra el contenedor horizontalmente al establecer los márgenes izquierdo y derecho en “auto” */
+    margin:0 auto;
+}
+
+.header{
+    font-family: "Playfair Display", serif;
+    /*Crea un fondo con degradado lineal con tres puntos de color*/
+    background: linear-gradient(
+        180deg,
+        rgba(233, 127, 6)0%,
+        rgb(212, 118, 11)51%,
+        rgb(189, 100, 5)100%
+    );
+    /*Altura Maxima*/
+    min-height: 70vh;
+    /*Para Alinear el Contenido en el Centro*/
+    display: flex;
+    align-items: center;
+}
+
+
+
+.menu{
+    /*Posiciona el menu el la parte de Arriba y lo extiende horizontamente*/
+    position: absolute;
+    top:0;
+    left: 0;
+    right:0;
+    /*alinea verticalmente los elementos del menú en el centro utilizando flexbox*/
+    display:flex;
+    align-items: center;
+    /*distribuye uniformemente los elementos del menú horizontalmente*/
+    justify-content: space-between;
+}
+
+.imagen-logo img{
+    /* ancho de la imagen*/
+    width:  80px;
+}
+
+.menu .navegacion ul li{
+    position: relative;
+    float:left;
+}
+
+
+.menu .navegacion ul li a{
+    /*Tamaño de la letra*/
+    font-size: 18px;
+    /* agrega un relleno de 40 píxeles alrededor del enlace*/
+    padding: 40px;
+    /* establece el color del texto en negro*/
+    color: black;
+    /*hace que el enlace sea un elemento de bloque (ocupando todo el ancho disponible)*/
+    display: block;
+    /* establece el peso de la fuente en negrita*/
+    font-weight: bold;
+
+}
+
+
+.menu .navegacion ul a:hover{
+    /*Cambia el color del texto a gris cuando el usuario pasa el cursor sobre los enlaces*/
+    color:grey
+}
+
+.menu .navegacion a::after{
+    /*Cambia el color del texto a gris cuando el usuario pasa el cursor sobre los enlaces*/
+    content:"";
+    /*Posiciona el pseudo-elemento de manera absoluta con respecto al enlace*/
+	position: absolute;
+    /* establece el ancho del pseudo-elemento al 100% del ancho del enlace*/
+	width: 100%;
+    /*coloca el pseudo-elemento 5 píxeles por debajo del enlace*/
+	bottom: -5px;
+    /*alinea el pseudo-elemento a la izquierda del enlace*/
+	left: 0;
+    /*establece la altura del pseudo-elemento en 1 píxel (creando una línea horizontal)*/
+	height: 1px;
+	background: white;	
+    /*inicialmente, el pseudo-elemento está completamente escalado en el eje X (invisible)*/   
+    transform: scaleX(0);
+    /*establece el punto de origen de la transformación en el lado derecho.*/
+	transform-origin: right;
+    /*agrega una transición suave para la transformación*/
+    transition: transform .4s;
+}
+
+.menu .navegacion a:hover::after{
+    /*Cuando el cursor está sobre los enlaces, cambia la escala del pseudo-elemento en el eje X a 1 (haciéndolo visible).*/
+	transform: scaleX(1);
+    /*El punto de origen de la transformación se cambia al lado izquierdo*/
+    transform-origin: left;	
+}
+    
+.menu-icono{
+    /*Establece el ancho de estos elementos en 30 píxeles*/
+    width: 30px;
+
+}
+
+.menu label{
+    /*Cambia el cursor a una mano (indicando que es interactivo)*/
+    cursor:pointer;
+    /*Oculta las etiquetas */
+    display:none;
+}
+
+
+.header-content{
+    /*Agrega un relleno de 100 píxeles arriba y abajo*/
+    padding: 100px 0;
+    /*Utiliza flexbox para alinear verticalmente el contenido en el centro*/
+    display:flex;
+    align-items: center;
+}
+
+
+.header-txt{
+    width: 50%;
+    padding-right: 100px;
+}
+
+
+.header-txt h2 {
+    font-size: 140px;
+    line-height: 150px;
+    color:#ffffff;
+    user-select: none;
+    cursor: pointer;
+    margin-bottom: 25px;
+}
+
+
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    color:rgb(12, 12, 12);
+    margin-bottom: 35px;
+}
+
+.header-img{
+    width: 50%;
+    text-align: center;
+}
+.header-img img{
+    width: 380px;
+}
+.historia-txt{
+    width: 50%;
+    padding-right: 100px;
+}
+.historia-txt h2{
+    font-size: 50px;
+    line-height: 100px;
+    margin-bottom: 10px;
+}
+.historia-content{
+    padding: 20px 0;
+    display:flex;
+    align-items: center;
+
+}
+.his-img{
+    width: 60%;
+    text-align: center;
+}
+
+.his img{
+    width: 500px;
+}
